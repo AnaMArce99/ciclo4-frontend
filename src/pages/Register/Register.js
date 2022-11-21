@@ -45,7 +45,7 @@ function Register() {
                   placeholder="Ingresa tu email"
                   required />
               </div>
-              <button onClick={() => navigate("/login")}>Crear</button>
+              <button onClick={() => navigate("/login")}>Crear usuario</button>
             </div>
           </div>
         </div>
