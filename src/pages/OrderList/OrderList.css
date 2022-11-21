@@ -26,7 +26,7 @@
 }
 
 .orderList__header button {
-  border: transparent;
+  border: none;
   border-bottom: 1px solid blue;
   color: blue;
   background: none;
