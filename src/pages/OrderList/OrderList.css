@@ -7,22 +7,26 @@
 }
 
 .orderList__field {
-  border: 1px solid black;
+  border: none;
   border-radius: 10px;
   padding: 20px 30px;
   padding-top: 0;
-  background-color: rgb(243, 255, 251);
+  background-color: #b9f6ca;
 }
 
 .orderList__title {
   display: flex;
-  padding: 25px 30px;
+  justify-content: center;
+  padding: 25px 0;
+  font-size: 20px;
+  color: #2bbd7e;
+  font-weight: 500;
 }
 
 .orderList__header {
   display: flex;
   justify-content: end;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 
 .orderList__header button {
@@ -34,9 +38,21 @@
 }
 
 .orderList__card {
-  border: 1px solid black;
+  border: none;
   padding: 30px 50px;
   padding-top: 10px;
   border-radius: 10px;
   background-color: white;
+}
+
+.table button{
+border: transparent;
+  border-bottom: 1px solid blue;
+  color: blue;
+  background: none;
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: #ecfffd;
 }

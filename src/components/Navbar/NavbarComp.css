@@ -1,11 +1,11 @@
-.navbar {
+/*.navbar {
   position: fixed;
   top: 0;
   width: 100vw;
   height: 60px;
   display: flex;
   padding: 10px 10px;
-  background: rgb(183, 241, 192);
+  background: rgb(241, 203, 183);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   justify-content: end;
   z-index: 10;
@@ -15,23 +15,39 @@
   color:rgba(54, 185, 104, 0.493);
   position: absolute;
   left: 25px;
+} */
+
+.navbarBrand {
+  font-size: 40px;
+  margin-left: 30px;
+  color: white;
+  white-space: pre-wrap;
+}
+
+.navbar-brand {
+  margin-left: 20px;
 }
 
 .navbar button {
-  border-color: rgb(17, 223, 38);
-  background: white;
+  border-color: #00e676;
+  background: #ecfffd;
   min-width: 100px;
-  margin-right: 20px;
-  font-size: 14px;
-  color: darkgreen;
+  margin-right: 30px;
+  margin-left: 10px;
+  font-size: 18px;
+  color: #003300;
   cursor: pointer;
   letter-spacing: 2px;
   transition: all 0.3s ease;
   border-radius: 5px;
 }
 
+.navbar {
+  background-color: #69f0ae;
+}
+
 .navbar button:hover {
-  background: rgba(147, 240, 138, 0.941);
-  font-size: 17px;
+  background: #66ffa6;
+  font-size: 20px;
   color: white;
 }

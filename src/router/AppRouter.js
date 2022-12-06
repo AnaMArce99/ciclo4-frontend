@@ -7,10 +7,13 @@ import OrderList from "../pages/OrderList/OrderList";
 import CreateOrder from "../pages/CreateOrder/CreateOrder";
 import Order from "../pages/Order/Order";
 import NotFound from "../pages/NotFound/NotFound"
-const AppRouter = () => {
+import Footer from "../components/Footer/FooterComp";
+
+function AppRouter() {
   return (
     <Router>
       <NavbarComp />
+      <Footer />
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route exact path="/login" element={<Login />} />
@@ -19,9 +22,10 @@ const AppRouter = () => {
         <Route exact path="/orderlist" element={<OrderList />} />
         <Route exact path="/create" element={<CreateOrder />} />
         <Route exact path="/order" element={<Order />} />
+        <Route exact path="/order/:id" element={<Order />} />
       </Routes>
     </Router>
   );
-};
+}
 
 export default AppRouter;

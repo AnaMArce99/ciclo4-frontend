@@ -12,12 +12,10 @@
   padding: 20px 30px;
   padding-top: 0;
   background-color: #b9f6ca;
-  
 }
 
 .signup__title {
   display: flex;
-  
   justify-content: center;
   padding: 25px 0;
   font-size: 20px;
@@ -58,7 +56,7 @@
 }
 
 .signup__form button {
-  margin-top: 5px;
+  margin-top: 7px;
   background-color: #04aa6d;
   color: white;
   padding: 10px 20px;
