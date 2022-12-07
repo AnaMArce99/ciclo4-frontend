@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getAllOrders } from "../../api/api";
 import "./OrderList.css";
 
 function OrderList() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    return await getAllOrders()
+      .then((res) => {
+        console.log(res);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const navigate = useNavigate();
   return (
     <div className="container">
@@ -15,7 +33,7 @@ function OrderList() {
             <button
               onClick={() => navigate("/create")}
               type="button"
-              class="btn btn-primary"
+              className="btn btn-primary"
             >
               Crear Orden
             </button>
@@ -33,33 +51,17 @@ function OrderList() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">
-                      <button onClick={() => navigate("/order/1")}>1</button>
-                    </th>
-                    <td>01/01/22</td>
-                    <td>Cali</td>
-                    <td>Avenida 5N #6N-03</td>
-                    <td>Guardado</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <button onClick={() => navigate("/order/2")}>2</button>
-                    </th>
-                    <td>01/01/22</td>
-                    <td>Bogotá</td>
-                    <td>Calle 3 #23-06</td>
-                    <td>Guardado</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <button onClick={() => navigate("/order/3")}>3</button>
-                    </th>
-                    <td>01/01/22</td>
-                    <td>Medellín</td>
-                    <td>Carrera 25 #56-03</td>
-                    <td>Guardado</td>
-                  </tr>
+                  {data.map((elem) => (
+                    <tr key={elem._id}>
+                      <th scope="row">
+                        <button onClick={() => navigate(`/order/${elem._id}`)}>{elem._id}</button>
+                      </th>
+                      <td>{elem.date}</td>
+                      <td>{elem.dest_city}</td>
+                      <td>{elem.dest_address}</td>
+                      <td>{elem.status}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </>

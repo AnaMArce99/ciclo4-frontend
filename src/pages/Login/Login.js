@@ -1,17 +1,26 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import "./Login.css";
+import { signin } from "../../api/api"
+import { addInfo } from "../../features/UserSlice";
 
 function Login() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const customSubmit = (data) => {
+  const customSubmit = async (data) => {
     console.log("login data", data);
+    return await signin(data).then((res) =>{
+      dispatch(addInfo(res.data));
+    }).catch((err) => {
+      console.log(err)
+    })
   };
   return (
     <div className="container">
@@ -39,6 +48,7 @@ function Login() {
               <div className="form__field">
                 <label htmlFor="password">Contraseña</label>
                 <input
+                  type="password"
                   {...register("password", {
                     required: true,
                     pattern: ".{8,}",

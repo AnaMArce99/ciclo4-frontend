@@ -1,9 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { signup } from "../../api/api";
 import "./Register.css";
 
 function Register() {
   const navigate = useNavigate();
+  const [data, setData] = useState({
+    name: "",
+    user: "",
+    password: "",
+    email: ""
+  })
+
+  const handleInputChange = (event) => {
+    event.preventDefault();
+
+    setData({
+      ...data,
+      [event.target.name]: event.target.value,
+    });
+  };
+  
+  const  signUpUser = async () =>{
+    console.log(data)
+    return await signup(data).then((res) => {
+      navigate("/login");
+    }).catch((err) => {
+      alert("Un error ha ocurrido!")
+    })
+  }
+
   return (
     <div className="container">
       <div className="signup">
@@ -17,35 +43,43 @@ function Register() {
                 <label htmlFor="name">Nombre</label>
                 <input
                   id="name"
+                  name="name"
                   type="text"
                   placeholder="Ingresa tu nombre completo"
-                  required />
+                  required
+                  onChange={(e) => handleInputChange(e)} />
               </div>
               <div className="form__field">
                 <label htmlFor="user">Usuario</label>
                 <input
                   id="user"
+                  name="user"
                   type="text"
                   placeholder="Ingresa tu numero de cedula"
-                  required />
+                  required
+                  onChange={(e) => handleInputChange(e)} />
               </div>
               <div className="form__field">
                 <label htmlFor="password">Contraseña</label>
                 <input
                   id="password"
+                  name="password"
                   type="password"
                   placeholder="Crea una contraseña"
-                  required />
+                  required
+                  onChange={(e) => handleInputChange(e)} />
               </div>
               <div className="form__field">
                 <label htmlFor="email">Correo</label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="Ingresa tu email"
-                  required />
+                  required
+                  onChange={(e) => handleInputChange(e)} />
               </div>
-              <button onClick={() => navigate("/login")}>Crear usuario</button>
+              <button onClick={() => signUpUser()}>Crear usuario</button>
             </div>
           </div>
         </div>

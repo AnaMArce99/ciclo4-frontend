@@ -10,7 +10,7 @@ function NotFound() {
         <div className="NotFound__field">
           <header className="NotFound__header">
             <img
-              class="NotFound__header-image"
+              className="NotFound__header-image"
               src={logo}
               alt="404"
             ></img>
