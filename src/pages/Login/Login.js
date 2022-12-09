@@ -40,6 +40,7 @@ function Login() {
                     maxLength: 12,
                     minlength: 4,
                     pattern: "[1-9]+[0-9]",
+                    placeholder: "Por favor ingrese su cédula"
                   })}
                   aria-invalid={errors.user ? "true" : "false"}
                 />
@@ -52,6 +53,7 @@ function Login() {
                   {...register("password", {
                     required: true,
                     pattern: ".{8,}",
+                    placeholder: "Por favor ingrese su contraseña"
                   })}
                   aria-invalid={errors.password ? "true" : "false"}
                 />

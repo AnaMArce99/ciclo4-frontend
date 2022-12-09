@@ -54,7 +54,7 @@ const CreateOrder = () => {
             Gestión de paquetes - Registro Ordenes
           </div>
           <div className="createOrder__card">
-            <div className="createOrder__card__size">
+            <div className="createOrder__card__header">
               <form className="form__field">
                 <label>Fecha</label>
                 <input
@@ -78,7 +78,7 @@ const CreateOrder = () => {
                 />
               </form>
             </div>
-            <div>
+            <div className="createOrder__card">
               <form className="form__field">
                 <label>Estado</label>
                 <select
@@ -93,7 +93,7 @@ const CreateOrder = () => {
                 </select>
               </form>
             </div>
-            <div className="createOrder__card__size">
+            <div className="createOrder__card__header">
               <form className="form__field__size">
                 <label>Largo</label>
                 <input
@@ -207,8 +207,6 @@ const CreateOrder = () => {
                 />
               </div>
             </div>
-          </div>
-          <div className="createOrder__footer">
             <button onClick={() => create()}>Crear orden</button>
           </div>
         </div>

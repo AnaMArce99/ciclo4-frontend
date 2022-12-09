@@ -83,7 +83,7 @@ const Order = () => {
             Gestión de paquetes - Actualización de Ordenes
           </div>
           <div className="createOrder__card">
-          <div className="createOrder__card__size">
+            <div className="createOrder__card__size">
               <form className="form__field">
                 <label>Fecha</label>
                 <input
@@ -248,8 +248,6 @@ const Order = () => {
                 />
               </div>
             </div>
-          </div>
-          <div className="createOrder__footer">
             <button onClick={() => update()}>Actualizar órden</button>
           </div>
         </div>
