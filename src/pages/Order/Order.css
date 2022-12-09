@@ -30,13 +30,34 @@
   background-color: white;
 }
 
+.createOrder__card label {
+  margin-bottom: 15px;
+}
+
+.createOrder__card input {
+  background: #f1f1f1;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.createOrder__card input:focus {
+  background-color: rgb(226, 224, 224);
+}
+
 .createOrder__card__size {
   display: flex;
 }
 
+.form__field__dt input {
+  min-width: 110px;
+}
+
+.form__field__dt label {
+  min-width: 100px;
+}
+
 .form__field__size {
   max-width: 150px;
-  margin-bottom: 15px;
 }
 
 .form__field__size label {
@@ -48,20 +69,18 @@
   min-width: 45px;
   width: 35%;
   margin-right: 5px;
-  background: #f1f1f1;
-  border-radius: 4px;
 }
 
-.form__field__size input:focus {
-  background-color: rgb(226, 224, 224);
-}
-
-.form__field label {
+.form__field__dt label {
   min-width: 100px;
 }
 
+.form__field label {
+  min-width: 240px;
+}
+
 .form__field input {
-  min-width: 250px;
+  min-width: 350px;
 }
 
 .form__field input:focus {

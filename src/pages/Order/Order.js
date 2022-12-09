@@ -84,7 +84,7 @@ const Order = () => {
           </div>
           <div className="createOrder__card">
             <div className="createOrder__card__size">
-              <form className="form__field">
+              <form className="form__field__dt">
                 <label>Fecha</label>
                 <input
                   id="date"
@@ -96,7 +96,7 @@ const Order = () => {
                   required
                 />
               </form>
-              <form className="form__field">
+              <form className="form__field__dt">
                 <label>Hora</label>
                 <input
                   id="time"
@@ -109,7 +109,7 @@ const Order = () => {
                 />
               </form>
             </div>
-            <div>
+            <div className="createOrder__card">
               <form className="form__field">
                 <label>Estado</label>
                 <select
@@ -248,7 +248,9 @@ const Order = () => {
                 />
               </div>
             </div>
-            <button onClick={() => update()}>Actualizar órden</button>
+            <div>
+              <button onClick={() => update()}>Actualizar órden</button>
+            </div>
           </div>
         </div>
       </div>
